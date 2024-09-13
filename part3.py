@@ -126,3 +126,15 @@ for epoch in range(epochs):
         save_generated_images(epoch + 1, fixed_noise)
 
 print("Training finished!")
+
+def plot_losses(g_losses, d_losses, output_dir="output/"):
+    os.makedirs(output_dir, exist_ok=True) 
+    plt.figure(figsize=(10, 5))
+    plt.title("Generator and Discriminator Loss During Training")
+    plt.plot(g_losses, label="Generator")
+    plt.plot(d_losses, label="Discriminator")
+    plt.xlabel("Iterations")
+    plt.ylabel("Loss")
+    plt.legend()
+    plt.savefig(os.path.join(output_dir, "loss_plot.png")) 
+    plt.close() 
