@@ -66,7 +66,7 @@ class Discriminator(nn.Module):
 
 # Hyperparameters
 latent_dim = 100
-epochs =  50
+epochs =  20
 learning_rate = 0.0003
 show_images_interval = 20  # Only show images every 'n' epochs
 
