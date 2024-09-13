@@ -24,7 +24,7 @@ transform = transforms.Compose([
 
 # Load data
 train_data = datasets.ImageFolder(root=data_path, transform=transform)
-train_loader = DataLoader(train_data, batch_size=64, shuffle=True)
+train_loader = DataLoader(train_data, batch_size=128, shuffle=True)
 
 # Generator
 class Generator(nn.Module):
@@ -65,9 +65,9 @@ class Discriminator(nn.Module):
         return validity
 
 # Hyperparameters
-latent_dim = 100
+latent_dim = 128
 epochs =  20
-learning_rate = 0.0003
+learning_rate = 0.0001
 show_images_interval = 20  # Only show images every 'n' epochs
 
 # Initialize generator and discriminator
